@@ -42,7 +42,7 @@ This dramatically reduces network and server load in large worlds with many play
 **Note:** Your project **must be C++** (it needs a `.sln` and `.Build.cs`).
 If you have a Blueprint-only project, just create any empty C++ class to generate the solution.
 Or start your test project using the **Third Person C++ template**.
-![img_001](images/img_001)
+![img_001](images/img_001.jpg)
 
 ---
 
@@ -50,13 +50,13 @@ Or start your test project using the **Third Person C++ template**.
 
 * Open the **Plugins** window.
 * Find **Replication Graph**, check it, accept the warning (it’s marked experimental), and restart the project.
-  ![img_002](images/img_002)
+  ![img_002](images/img_002.jpg)
 
 > Technically, Replication Graph is not really a plugin — the checkbox simply enables the internal modules.
 > If you skip this step, the system won't link the required modules.
 
 Check your `.uproject` → there should be `ReplicationGraph` listed under `Plugins`.
-![img_003](images/img_003)
+![img_003](images/img_003.jpg)
 
 ---
 
@@ -67,13 +67,13 @@ In the **Unreal Editor**, go to:
 ```
 Tools → New C++ Class
 ```
-![img_004](images/img_004)
+![img_004](images/img_004.jpg)
 
 Choose **All Classes**, search for `ReplicationGraph`, and create your custom class, e.g. `MyReplicationGraph`.
-![img_005](images/img_005)
+![img_005](images/img_005.jpg)
 
 You’ll see it appear in your project files:
-![img_006](images/img_006)
+![img_006](images/img_006.jpg)
 
 ---
 
@@ -89,10 +89,10 @@ ReplicationDriverClassName="/Script/YourProject.YourProjectReplicationGraph"
 
 Replace `YourProject` with your module name and `YourProjectReplicationGraph` with your class name.
 
-![img_007](images/img_007)
+![img_007](images/img_007.jpg)
 
 Also, add `ReplicationGraph` to `PublicDependencyModuleNames` in your `YourProject.Build.cs`:
-![img_008](images/img_008)
+![img_008](images/img_008.jpg)
 
 ✅ Now your custom Replication Graph is **linked** — but it won’t do anything yet because you haven’t defined any nodes.
 
@@ -101,7 +101,7 @@ Also, add `ReplicationGraph` to `PublicDependencyModuleNames` in your `YourProje
 ### **Step 4️⃣: Test the Link**
 
 Run the game in **Listen Server** mode (Net Mode: *Play As Listen Server*, with at least two players).
-![img_009](images/img_009)
+![img_009](images/img_009.jpg)
 
 The clients won’t replicate anything yet — that’s expected!
 Check the **Output Log** — you should see:
@@ -110,7 +110,7 @@ Check the **Output Log** — you should see:
 using replication model MyReplicationGraph
 ```
 
-![img_010](images/img_010)
+![img_010](images/img_010.jpg)
 
 ---
 
